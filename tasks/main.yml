@@ -1,0 +1,13 @@
+---
+# tasks file for docker
+- name: Docker | Include {{ ansible_distribution }} specific variables
+  include_vars: "{{ ansible_distribution | lower }}.yml"
+
+- name: Docker | Start Installation
+  include_tasks: "{{ ansible_pkg_mgr }}.yml"
+
+- name: Docker | Ensure service starts at boot
+  systemd:
+    name: docker
+    state: started
+    enabled: yes

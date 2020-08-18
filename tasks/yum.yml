@@ -1,0 +1,17 @@
+---
+# tasks file for docker
+- name: Docker | Configure Docker repository
+  get_url:
+    url: "{{ docker_ce_repo_file }}"
+    dest: /etc/yum.repos.d/docker-ce.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Docker | Install docker-ce
+  yum:
+    name:
+      - "docker-ce{{ ('-' if docker_ce_version_yum else '') ~ (docker_ce_version_yum | default(omit)) }}"
+      - "docker-ce-cli{{ ('-' if docker_ce_version_yum else '') ~ (docker_ce_version_yum | default(omit)) }}"
+      - containerd.io
+    state: present

@@ -1,0 +1,5 @@
+---
+# vars file for docker
+docker_ce_repo_url: "https://download.docker.com/linux/debian"
+docker_ce_gpg_key: "{{ docker_ce_repo_url }}/gpg"
+docker_ce_apt_repo: "deb [arch={{ ansible_architecture }}] {{ docker_ce_repo_url }} {{ ansible_distribution_release }} stable"

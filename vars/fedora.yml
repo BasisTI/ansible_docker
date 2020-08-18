@@ -1,0 +1,5 @@
+---
+# vars file for docker
+docker_ce_repo_url: "https://download.docker.com/linux/fedora"
+docker_ce_repo_file: "{{ docker_ce_repo_url }}/docker-ce.repo"
+docker_ce_gpg_key: "{{ docker_ce_repo_url }}/gpg"
