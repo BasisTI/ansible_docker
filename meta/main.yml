@@ -10,5 +10,18 @@ galaxy_info:
     - ubuntu
     - centos
     - fedora
+  platforms:
+    - name: Centos
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
 
 dependencies: []
