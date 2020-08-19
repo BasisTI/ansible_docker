@@ -11,17 +11,43 @@ galaxy_info:
     - centos
     - fedora
   platforms:
+    - name: Red Hat Enterprise Linux
+      versions:
+        - 6
+        - 7
+        - 8
     - name: Centos
       versions:
-        - all
+        - 6
+        - 7
+        - 8
     - name: Fedora
       versions:
-        - all
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+        - 30
+        - 31
     - name: Debian
       versions:
-        - all
+        - buster
+        - jessie
+        - stretch
+        - wheezy
     - name: Ubuntu
       versions:
-        - all
+        - artful
+        - bionic
+        - cosmic
+        - disco
+        - eoan
+        - focal
+        - trusty
+        - xenial
+        - yakkety
+        - zesty
 
 dependencies: []
