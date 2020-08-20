@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Publish into Ansible Galaxy
+name: Ansible Galaxy
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -24,7 +24,7 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         uses: ansible/ansible-lint-action@master
         with:
-          targets: "."
+          targets: "./"
         
   publish:
     if: github.ref == 'refs/heads/master'
