@@ -23,11 +23,12 @@ jobs:
       - name: Lint
         if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
         uses: ansible/ansible-lint-action@master
-        with:
-          targets: "."
 
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/master' }}
+    steps:
       - name: Publish
-        if: ${{ github.ref == 'refs/heads/master' }}
         uses: robertdebock/galaxy-action@master
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
