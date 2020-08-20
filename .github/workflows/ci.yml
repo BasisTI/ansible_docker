@@ -23,6 +23,8 @@ jobs:
       - name: Lint
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         uses: ansible/ansible-lint-action@master
+        with:
+          targets: "."
         
   publish:
     if: github.ref == 'refs/heads/master'
