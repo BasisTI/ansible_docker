@@ -8,13 +8,11 @@ An Ansible Role that installs Docker Engine on RHEL/CentOS/Fedora and Debian/Ubu
 Role Variables
 --------------
 
-Available variables are listed below, along with default values (see defaults/main.yml):
+You can specify a specific version of Docker to install. If not specify release package will be install.
 
     docker_ce_version_apt: ""
     docker_ce_version_yum: ""
     docker_ce_version_dnf: ""
-
-You can specify a specific version of Docker to install.
 
 Example Playbook
 ----------------
