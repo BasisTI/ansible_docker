@@ -1,27 +1,28 @@
+# Ansible Role: Docker Engine
+
+
+An ansible role that installs docker engine on rhel/centos/fedora and debian/ubuntu. 
+
 ![Ansible Galaxy](https://github.com/BasisTI/ansible_docker/workflows/Ansible%20Galaxy/badge.svg)
 
-Ansible Role: Docker Engine
-=========
+## Tags:
+## Variables:
 
-An Ansible Role that installs Docker Engine on RHEL/CentOS/Fedora and Debian/Ubuntu.
+* `docker_ce_version_apt`: `''` - Defines docker version for apt. If empty will be used latest version.
 
-Role Variables
---------------
 
-You can specify a specific version of Docker to install. If not specified release package will be installed.
 
-    docker_ce_version_apt: ""
-    docker_ce_version_yum: ""
-    docker_ce_version_dnf: ""
+* `docker_ce_version_yum`: `''` - Defines docker version for yum. If empty will be used latest version.
 
-Example Playbook
-----------------
 
-    - hosts: servers
-      roles:
-         - { role: basisconfig.docker }
 
-License
--------
+* `docker_ce_version_dnf`: `''` - Defines docker version for dnf. If empty will be used latest version.
 
-BSD
+
+## License
+Apache-2.0
+
+
+
+Documentation generated using: [Ansible-autodoc](https://github.com/AndresBott/ansible-autodoc)
+
