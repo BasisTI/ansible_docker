@@ -7,6 +7,7 @@
   include_tasks: "{{ ansible_pkg_mgr }}.yml"
 
 - name: Docker | Ensure service starts at boot
+  become: true
   systemd:
     name: docker
     state: started

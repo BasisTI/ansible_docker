@@ -1,6 +1,7 @@
 ---
 # tasks file for docker
 - name: Docker | Install Prerequisits for APT
+  become: true
   apt:
     update_cache: yes
     name:
@@ -12,16 +13,19 @@
     state: present
 
 - name: Docker | Add repository key
+  become: true
   apt_key:
     url: "{{ docker_ce_gpg_key }}"
     state: present
 
 - name: Docker | Configure Docker repository
+  become: true
   apt_repository:
     repo: "{{ docker_ce_apt_repo }}"
     state: present
 
 - name: Docker | Install docker-ce
+  become: true
   apt:
     update_cache: yes
     name:
