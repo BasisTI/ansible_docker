@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: docker
   author: cainafeitosa
   description: Ansible role that installs Docker
   company: Basis Tecnologia
