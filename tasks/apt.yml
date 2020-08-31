@@ -1,6 +1,6 @@
 ---
 # tasks file for docker
-- name: Docker | Install Prerequisits for APT
+- name: Docker | Install Prerequisites for APT
   become: true
   apt:
     update_cache: yes
