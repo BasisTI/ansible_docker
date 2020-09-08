@@ -9,3 +9,4 @@ docker_ce_version_yum: ""
 # @var docker_ce_version_dnf: ''
 # Defines docker version for dnf. If empty will be used latest version.
 docker_ce_version_dnf: ""
+docker_daemon_json: ""
