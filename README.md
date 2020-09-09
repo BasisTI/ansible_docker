@@ -19,6 +19,10 @@ An ansible role that installs docker engine on rhel/centos/fedora and debian/ubu
 * `docker_ce_version_dnf`: `''` - Defines docker version for dnf. If empty will be used latest version.
 
 
+
+* `docker_DAEMON_OPTION`: `''` - Defines options of daemon.json. Example: docker_bip
+
+
 ## License
 Apache-2.0
 
