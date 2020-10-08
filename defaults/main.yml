@@ -1,16 +1,13 @@
 ---
 # defaults file for docker
-# @var docker_ce_version_apt: ''
-# Defines docker version for apt. If empty will be used latest version.
-docker_ce_version_apt: ""
-# @var docker_ce_version_yum: ''
-# Defines docker version for yum. If empty will be used latest version.
-docker_ce_version_yum: ""
-# @var docker_ce_version_dnf: ''
-# Defines docker version for dnf. If empty will be used latest version.
-docker_ce_version_dnf: ""
-# @var docker_DAEMON_OPTION: ''
-# Defines options of daemon.json. Example: docker_bip
+docker_version: ''
+# @var docker_version: '' # Set a specific version of Docker Engine, list the available versions in the repo, then select.
+# @example #
+# docker_version: "18.09.1" # CentOS
+#docker_version: "5:18.09.1~3-0~debian-stretch" # Debian
+#docker_version: "3:18.09.1" # Fedora
+#docker_version: "5:18.09.1~3-0~ubuntu-xenial" # Ubuntu
+# @end
 docker_options:
   api-cors-header: "{{ docker_api_cors_header | default(None) }}"
   authorization-plugins: "{{ docker_authorization_plugins | default(None) }}"
@@ -47,7 +44,7 @@ docker_options:
   live-restore: "{{ docker_live_restore | default(None) }}"
   log-driver: "{{ docker_log_driver | default(None) }}"
   log-level: "{{ docker_log_level | default(None) }}"
-  log-opts: "{{ docker_log_opts | default(None) }}"
+  log-opts: "{{ docker_log_opts | default{None) }}"
   max-concurrent-downloads: "{{ docker_max_concurrent_downloads | default(None) }}"
   max-concurrent-uploads: "{{ docker_max_concurrent_uploads | default(None) }}"
   mtu: "{{ docker_mtu | default(None) }}"
@@ -67,3 +64,14 @@ docker_options:
   tlsverify: "{{ docker_tlsverify | default(None) }}"
   userland-proxy: "{{ docker_userland_proxy | default(None) }}"
   userns-remap: "{{ docker_userns_remap | default(None) }}"
+# @var docker_options: '' # Defines options of daemon.json
+# @example #
+# docker_options:
+#   bip: "172.17.0.1/16"
+#   exec-opts: ["native.cgroupdriver=systemd"]
+#   log-driver: "json-file"
+#   log-opts: {"max-size": "100m"}
+#   storage-driver: "overlay2"
+#   storage-opts: ["overlay2.override_kernel_check=true"]
+# @end
+

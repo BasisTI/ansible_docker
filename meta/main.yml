@@ -10,12 +10,22 @@ galaxy_info:
   min_ansible_version: 2.9
   galaxy_tags:
     - docker
-    - debian
-    - ubuntu
     - centos
+    - debian
     - fedora
+    - redhat
+    - ubuntu
   platforms:
-    - name: Fedora
+    - name: EL
+      versions:
+        - 7
+    - name: debian
+      versions:
+        - buster
+        - jessie
+        - stretch
+        - wheezy
+    - name: fedora
       versions:
         - 24
         - 25
@@ -25,13 +35,8 @@ galaxy_info:
         - 29
         - 30
         - 31
-    - name: Debian
-      versions:
-        - buster
-        - jessie
-        - stretch
-        - wheezy
-    - name: Ubuntu
+        - 32
+    - name: ubuntu
       versions:
         - artful
         - bionic

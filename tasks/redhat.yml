@@ -1,0 +1,59 @@
+---
+- name: Install required packages
+  package:
+    name:
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+    state: present
+
+- name: Add the Docker repository
+  get_url:
+    url: "{{ supported_platforms[ansible_distribution]['repo_url'] }}"
+    dest: /etc/yum.repos.d/docker-ce.repo
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install Docker CE
+  package:
+    name:
+      - "docker-ce{{ docker_version_string }}"
+      - "docker-ce-cli{{ docker_version_string }}"
+      - containerd.io
+    state: present
+  vars:
+    docker_version_string: >
+      "{{ (docker_version | length > 0) | ternary('-' + docker_version, '') }}"
+
+- name: Create /etc/docker
+  file:
+    path: /etc/docker
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Set up the Docker daemon options (json)
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: '0644'
+  register: docker_daemon_json_state
+
+- name: Create /etc/systemd/system/docker.service.d
+  file:
+    path: /etc/systemd/system/docker.service.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Ensure service starts at boot
+  systemd:
+    name: docker
+    enabled: yes
+    state: "{{ (docker_daemon_json_state is changed) | ternary('restarted', 'started') }}"
+    daemon_reload: yes

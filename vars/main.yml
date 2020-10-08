@@ -1,2 +1,13 @@
 ---
 # vars file for docker
+supported_platforms:
+  CentOS:
+    repo_url: https://download.docker.com/linux/centos/docker-ce.repo
+  Debian:
+    repo_url: https://download.docker.com/linux/debian 
+  Fedora:
+    repo_url: https://download.docker.com/linux/fedora/docker-ce.repo
+  RedHat:
+    repo_url: https://download.docker.com/linux/rhel/docker-ce.repo
+  Ubuntu:
+    repo_url: https://download.docker.com/linux/ubuntu

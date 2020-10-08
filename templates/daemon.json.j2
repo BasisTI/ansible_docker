@@ -1,5 +1,5 @@
 {% set docker_config = {} %}
-{% for key,value in docker_options.iteritems() %}
+{% for key,value in docker_options.items() %}
 {% if value != '' %}
 {% set myvalue = docker_config.update({ key: value }) %}
 {% endif %}
