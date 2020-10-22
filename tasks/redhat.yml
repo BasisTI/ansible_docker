@@ -18,13 +18,10 @@
 - name: Install Docker CE
   package:
     name:
-      - "docker-ce{{ docker_version_string }}"
-      - "docker-ce-cli{{ docker_version_string }}"
+      - "docker-ce{{ (docker_version | length > 0) | ternary('-' + docker_version, '') }}"
+      - "docker-ce-cli{{ (docker_version | length > 0) | ternary('-' + docker_version, '') }}"
       - containerd.io
     state: present
-  vars:
-    docker_version_string: >
-      "{{ (docker_version | length > 0) | ternary('-' + docker_version, '') }}"
 
 - name: Create /etc/docker
   file:

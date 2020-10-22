@@ -44,7 +44,7 @@ docker_options:
   live-restore: "{{ docker_live_restore | default(None) }}"
   log-driver: "{{ docker_log_driver | default(None) }}"
   log-level: "{{ docker_log_level | default(None) }}"
-  log-opts: "{{ docker_log_opts | default{None) }}"
+  log-opts: "{{ docker_log_opts | default(None) }}"
   max-concurrent-downloads: "{{ docker_max_concurrent_downloads | default(None) }}"
   max-concurrent-uploads: "{{ docker_max_concurrent_uploads | default(None) }}"
   mtu: "{{ docker_mtu | default(None) }}"
@@ -74,4 +74,3 @@ docker_options:
 #   storage-driver: "overlay2"
 #   storage-opts: ["overlay2.override_kernel_check=true"]
 # @end
-
