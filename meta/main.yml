@@ -1,12 +1,12 @@
 galaxy_info:
 # @meta role_name: Docker Engine
 # @meta description: An Ansible Role that installs Docker Engine on RHEL/CentOS/Fedora and Debian/Ubuntu.
-# @meta license: Apache-2.0
+# @meta license: MIT
   role_name: docker
   author: cainafeitosa
   description: An Ansible Role that installs Docker Engine on RHEL/CentOS/Fedora and Debian/Ubuntu.
   company: Basis Tecnologia
-  license: Apache-2.0
+  license: MIT
   min_ansible_version: 2.9
   galaxy_tags:
     - docker

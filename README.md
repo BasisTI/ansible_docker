@@ -35,7 +35,7 @@ docker_options:
    storage-opts: ["overlay2.override_kernel_check=true"]
 ```
 ## License
-Apache-2.0
+Mit
 
 
 
