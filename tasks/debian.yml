@@ -12,12 +12,12 @@
 
 - name: Add Docker's official GPG key
   apt_key:
-    url: "{{ supported_platforms[ansible_distribution]['repo_url'] }}/gpg"
+    url: "{{ docker_repositories[ansible_distribution]['baseurl'] }}/gpg"
     state: present
 
 - name: Add the Docker apt repository
   apt_repository:
-    repo: "deb [arch=amd64] {{ supported_platforms[ansible_distribution]['repo_url'] }} {{ ansible_distribution_release }} stable"
+    repo: "deb [arch=amd64] {{ docker_repositories[ansible_distribution]['baseurl'] }} {{ ansible_distribution_release }} stable"
     state: present
 
 - name: Install Docker CE

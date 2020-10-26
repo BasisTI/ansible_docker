@@ -1,13 +1,28 @@
 ---
 # vars file for docker
-supported_platforms:
+docker_repositories:
   CentOS:
-    repo_url: https://download.docker.com/linux/centos/docker-ce.repo
-  Debian:
-    repo_url: https://download.docker.com/linux/debian 
-  Fedora:
-    repo_url: https://download.docker.com/linux/fedora/docker-ce.repo
+    name: docker-ce
+    description: Docker CE Stable - $basearch
+    baseurl: "https://download.docker.com/linux/centos/{{ ansible_distribution_major_version }}/$basearch/stable"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
   RedHat:
-    repo_url: https://download.docker.com/linux/rhel/docker-ce.repo
+    name: docker-ce
+    description: Docker CE Stable - $basearch
+    baseurl: "https://download.docker.com/linux/centos/{{ ansible_distribution_major_version }}/$basearch/stable"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
+  Fedora:
+    name: docker-ce
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+  Debian:
+    baseurl: https://download.docker.com/linux/debian 
   Ubuntu:
-    repo_url: https://download.docker.com/linux/ubuntu
+    baseurl: https://download.docker.com/linux/ubuntu

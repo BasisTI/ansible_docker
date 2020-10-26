@@ -8,12 +8,14 @@
     state: present
 
 - name: Add the Docker repository
-  get_url:
-    url: "{{ supported_platforms[ansible_distribution]['repo_url'] }}"
-    dest: /etc/yum.repos.d/docker-ce.repo
-    owner: root
-    group: root
-    mode: '0644'
+  yum_repository:
+    name: "{{ docker_repositories[ansible_distribution]['name'] }}"
+    description: "{{ docker_repositories[ansible_distribution]['description'] }}"
+    baseurl: "{{ docker_repositories[ansible_distribution]['baseurl'] }}"
+    enabled: "{{ docker_repositories[ansible_distribution]['enabled'] }}"
+    gpgcheck: "{{ docker_repositories[ansible_distribution]['gpgcheck'] }}"
+    gpgkey: "{{ docker_repositories[ansible_distribution]['gpgkey'] }}"
+    state: present
 
 - name: Install Docker CE
   package:
