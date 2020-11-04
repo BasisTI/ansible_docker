@@ -1,7 +1,7 @@
 ---
 - name: Install packages to allow apt to use a repository over HTTPS
   apt:
-    update_cache: yes
+    update_cache: True
     name:
       - apt-transport-https
       - ca-certificates
@@ -56,8 +56,7 @@
     mode: '0755'
 
 - name: Ensure service starts at boot
-  systemd:
+  service:
     name: docker
-    enabled: yes
+    enabled: True
     state: "{{ (docker_daemon_json_state is changed) | ternary('restarted', 'started') }}"
-    daemon_reload: yes

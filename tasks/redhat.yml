@@ -53,6 +53,6 @@
 - name: Ensure service starts at boot
   systemd:
     name: docker
-    enabled: yes
+    enabled: True
     state: "{{ (docker_daemon_json_state is changed) | ternary('restarted', 'started') }}"
-    daemon_reload: yes
+    daemon_reload: True

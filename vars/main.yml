@@ -5,22 +5,22 @@ docker_repositories:
     name: docker-ce
     description: Docker CE Stable - $basearch
     baseurl: https://download.docker.com/linux/centos/$releasever/$basearch/stable
-    enabled: yes
-    gpgcheck: yes
+    enabled: True
+    gpgcheck: True
     gpgkey: https://download.docker.com/linux/centos/gpg
   RedHat:
     name: docker-ce
     description: Docker CE Stable - $basearch
     baseurl: "https://download.docker.com/linux/centos/{{ ansible_distribution_major_version }}/$basearch/stable"
-    enabled: yes
-    gpgcheck: yes
+    enabled: True
+    gpgcheck: True
     gpgkey: https://download.docker.com/linux/centos/gpg
   Fedora:
     name: docker-ce
     description: Docker CE Stable - $basearch
     baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
-    enabled: yes
-    gpgcheck: yes
+    enabled: True
+    gpgcheck: True
     gpgkey: https://download.docker.com/linux/fedora/gpg
   Debian:
     baseurl: https://download.docker.com/linux/debian 
